@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema( {
     firstName: String,
@@ -24,6 +24,33 @@ const userSchema = new mongoose.Schema( {
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema) //users
+*/
+
+
+
+
+const mongoose = require('mongoose');
+
+const bookSchema = new mongoose.Schema( {
+    bookname: String,
+    authorname: String,
+    registerno : {
+        type: String,
+        unique: true,                           
+        required: true                         
+    },
+    year : Number,
+    category: {
+        type: String,
+        enum: ["history" , "mythology", "sci-fic" , "biography" , "fictional"]
+    }, 
+
+}, { timestamps: true });
+
+module.exports = mongoose.model('Books', bookSchema) //books
+
+
+
 
 
 

@@ -22,6 +22,7 @@ let getStates = async function (req, res) {
 
 let getDistricts = async function (req, res) {
     try {
+
         let id = req.params.stateId
         let options = {
             method: "get",
